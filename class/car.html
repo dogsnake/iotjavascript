@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car {
+            #prcie2 = 1000;
+            #price;
+            constructor (modelName, modelYear, type, price){
+                this.modelName = modelName;
+                this.modelYear = modelYear;
+                this.type = type;
+                this.price = price;
+            }
+            getModelName(){
+                return this.modelName;
+            }
+            getModelYear(){
+                return this.modelYear;
+            }
+            getType(){
+                return this.type;
+            }
+            getPrice(){
+                return this.price;
+            }
+            setModelName(modelName){
+                this.modelName = modelName;
+            }
+            setModelYear(modelYear){
+                this.modelYear = modelYear;
+            }
+            setType(type){
+                this.type = type;
+            }
+            setPrice(price){
+                this.price = price;
+            }
+        }
+        let ionic = new Car("아이오닉","2021","0",4000);
+        console.log(ionic.getPrcie());
+        
+        class ElectricCar extends Car {
+            constructor (modelName, modelYear, type, price, chargeTime){
+                super(modelName, modelYear, type, price);
+                this.chargeTime = chargeTime;
+            }
+            run(){
+                super.run();
+                console.log("전기차가 달립니다.")
+            }
+        }
+        let elIonic = new ElectricCar("전기아이오닉","2022","0",6000,3);
+        elIonic.run();
+    </script>
+</body>
+</html>

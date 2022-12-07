@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor (name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            speak(){
+                console.log(`${this.name} : hello!`);
+            }
+        }
+        const min = new Person("민영",28);
+        console.log(min);
+        console.log(min.name);
+        min.speak();
+        class Student {
+            constructor (name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('A',29,true,45),
+            new Student('B',28,false,80),
+            new Student('C',30,true,90),
+            new Student('D',40,false,66),
+            new Student('E',18,true,88)
+        ];
+        console.log(students)
+
+        class Shape {
+            constructor (width, height, color){
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+            draw(){
+                console.log(`${this.color}로 그립니다.`);
+            }
+            getArea(){
+                return this.width * this.height;
+            }
+        }
+        class Rectangle extends Shape {
+            //메소드 재정의
+            //오버라이딩
+            draw(){
+                super.draw(); //this는 자기자신, super는 부모요소까지 같이
+                console.log("사각형을 그립니다.");
+            }
+        }
+        class Triangle extends Shape {
+            draw(){
+                console.log("삼각형을 그립니다.");
+            }
+        }
+        const rectangle = new Rectangle(20,20,'Blue');
+        rectangle.draw();
+        console.log(rectangle.getArea());
+        console.log(rectangle);
+        const triangle = new Triangle(20,40,'Pink');
+        triangle.draw();
+        console.log(triangle.getArea());
+        console.log(triangle);
+    </script>
+</body>
+</html>

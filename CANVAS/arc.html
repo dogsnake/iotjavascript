@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+     <canvas id="myCanvas" width="1100" height="500"></canvas>
+     <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext("2d");
+        let arcX = 100;
+        let arcEnd = 36;
+        for( let i=1; i<=10; i++){
+           ctx.beginPath();
+           arcX = 100*i;
+           arcEnd = 36*i;
+           ctx.arc(arcX,200,30,0,arcEnd*Math.PI/180,false)
+           ctx.stroke();    
+        }
+     </script>
+</body>
+</html>

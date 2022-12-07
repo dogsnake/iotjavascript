@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <canvas id="myCanvas" width="1000" height="2000"></canvas>
+     <script>
+         const canvas = document.getElementById('myCanvas');
+         const ctx = canvas.getContext("2d");
+        //let num1 = 100;
+        //for(let i=0; i<4; i++){
+        //    ctx.fillRect(num1+(i*80),50,50,50)
+        //}
+        //let num2 = 100;
+        //for(let j=0; j<4; j++){
+        //    ctx.fillRect(num2+(j*150),150,100,100)
+        //}
+        //let num3 = 100;
+        //for(let j=0; j<4; j++){
+        //    ctx.fillRect(num3+(j*300),350,150,150)
+        //}
+
+        let x = 100;
+        let y = 100;
+        let rectSize = 50;
+        for(let i=0;i<4; i++){
+            y= 100+(i*120);
+            for(let j=0; j<4; j++){
+                rectSize = 50+(i*25);
+                x= 100+(j*rectSize*1.5);
+                ctx.fillRect(x,y,rectSize,rectSize);
+            }
+        }
+        ctx.beginPath();
+        ctx.arc(100,400,30,0,120*Math.PI/180)
+        ctx.stroke();
+     </script>
+</body>
+</html>

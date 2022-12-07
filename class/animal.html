@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(name, speed){
+                this.name = name;
+                this.speed = speed;
+            }
+            run(speed){
+                this.speed = speed;
+                console.log(`${this.name}은 ${this.speed}로 달립니다.`);
+            }
+        }
+        let animal1 = new Animal('동물');
+        console.log(animal1);
+
+        class Rabbit extends Animal {
+            //상속 클래스의 생성자는 반드시 super로 호출해야 한다.
+            constructor(name, earLength){
+                super(name);
+                
+                this.earLength = earLength;
+            }
+
+            hide(){
+                alert(`${this.name}이 숨었습니다.`);
+            }
+        }
+        let rabbit = new Rabbit("흰 토끼");
+        rabbit.run(10);
+        rabbit.hide();
+    </script>
+</body>
+</html>
